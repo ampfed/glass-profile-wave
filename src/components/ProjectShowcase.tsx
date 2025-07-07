@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ExternalLink, Star, GitFork } from 'lucide-react';
+import { ExternalLink, Star, GitFork, Github } from 'lucide-react';
 
 const ProjectShowcase = () => {
   return (
