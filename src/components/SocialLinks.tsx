@@ -7,7 +7,7 @@ const SocialLinks = () => {
     {
       name: 'GitHub',
       icon: Github,
-      url: 'https://github.com/tsoxas',
+      url: 'https://github.com/ampfed',
       color: 'from-gray-500 to-gray-700',
       hoverColor: 'hover:from-gray-400 hover:to-gray-600'
     },
@@ -21,7 +21,7 @@ const SocialLinks = () => {
     {
       name: 'Email',
       icon: Mail,
-      url: 'mailto:contact@tsoxas.dev',
+      url: 'mailto:contact@ampfed.dev',
       color: 'from-red-500 to-pink-600',
       hoverColor: 'hover:from-red-400 hover:to-pink-500'
     },

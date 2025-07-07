@@ -10,7 +10,7 @@ const ProfileHeader = () => {
         <div className="relative">
           <div className="w-32 h-32 rounded-full bg-gradient-to-br from-purple-400 to-blue-500 p-1">
             <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center text-4xl font-bold text-white">
-              T
+              A
             </div>
           </div>
           <div className="absolute -bottom-2 -right-2 bg-green-500 w-8 h-8 rounded-full border-4 border-white/20 animate-pulse"></div>
@@ -19,9 +19,9 @@ const ProfileHeader = () => {
         {/* Profile Info */}
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-4xl font-bold text-white mb-2 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-            tsoxas
+            ampfed
           </h1>
-          <p className="text-xl text-white/80 mb-4">Dev @ E-Z Services</p>
+          <p className="text-xl text-white/80 mb-4">Dev @ ampfed</p>
           
           {/* View Counter */}
           <div className="flex items-center justify-center md:justify-start gap-2 mb-6">

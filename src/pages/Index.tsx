@@ -1,14 +1,25 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import ProfileHeader from '../components/ProfileHeader';
 import SocialLinks from '../components/SocialLinks';
 import ProjectShowcase from '../components/ProjectShowcase';
 import DiscordSection from '../components/DiscordSection';
 import MusicPlayer from '../components/MusicPlayer';
+import EntryScreen from '../components/EntryScreen';
 
 const Index = () => {
+  const [hasEntered, setHasEntered] = useState(false);
+
+  const handleEnter = () => {
+    setHasEntered(true);
+  };
+
+  if (!hasEntered) {
+    return <EntryScreen onEnter={handleEnter} />;
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 relative overflow-hidden animate-fade-in">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
@@ -33,8 +44,8 @@ const Index = () => {
           {/* Discord Section */}
           <DiscordSection />
           
-          {/* Music Player */}
-          <MusicPlayer />
+          {/* Music Player with auto-play */}
+          <MusicPlayer autoPlay={true} />
         </div>
       </div>
     </div>

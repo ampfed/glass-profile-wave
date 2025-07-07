@@ -33,7 +33,7 @@ const ProjectShowcase = () => {
         </div>
         
         <a
-          href="https://github.com/tsoxas/base"
+          href="https://github.com/ampfed/base"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-medium rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"

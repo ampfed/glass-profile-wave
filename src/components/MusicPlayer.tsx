@@ -1,11 +1,32 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Play, Pause, SkipBack, SkipForward, Volume2 } from 'lucide-react';
 
-const MusicPlayer = () => {
+interface MusicPlayerProps {
+  autoPlay?: boolean;
+}
+
+const MusicPlayer = ({ autoPlay = false }: MusicPlayerProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(45);
   const [duration] = useState(180);
+
+  useEffect(() => {
+    if (autoPlay) {
+      setIsPlaying(true);
+      // Start the time progression when auto-playing
+      const interval = setInterval(() => {
+        setCurrentTime(prev => {
+          if (prev >= duration) {
+            return 0; // Loop back to start
+          }
+          return prev + 1;
+        });
+      }, 1000);
+
+      return () => clearInterval(interval);
+    }
+  }, [autoPlay, duration]);
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -14,6 +35,10 @@ const MusicPlayer = () => {
   };
 
   const progressPercentage = (currentTime / duration) * 100;
+
+  const handlePlayPause = () => {
+    setIsPlaying(!isPlaying);
+  };
 
   return (
     <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-6 shadow-2xl">
@@ -47,7 +72,7 @@ const MusicPlayer = () => {
           </button>
           
           <button 
-            onClick={() => setIsPlaying(!isPlaying)}
+            onClick={handlePlayPause}
             className="p-4 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-400 hover:to-purple-400 transition-all duration-300 text-white transform hover:scale-105 shadow-lg"
           >
             {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6 ml-1" />}
