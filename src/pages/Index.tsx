@@ -37,25 +37,32 @@ const Index = () => {
       <div className="absolute bottom-32 right-32 w-48 h-48 bg-blue-500/20 rounded-full blur-xl animate-pulse delay-1000"></div>
       <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-indigo-500/20 rounded-full blur-xl animate-pulse delay-500"></div>
 
-      <div className="relative z-10 container mx-auto px-4 py-4 max-w-4xl h-screen flex flex-col">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 h-full">
-          {/* Left Column */}
-          <div className="flex flex-col gap-4">
-            {/* Profile Header */}
-            <div className="flex-shrink-0">
-              <ProfileHeader />
-            </div>
+      <div className="relative z-10 container mx-auto px-4 py-4 max-w-6xl h-screen flex flex-col">
+        {/* Mobile Layout */}
+        <div className="md:hidden flex flex-col gap-3 h-full">
+          <div className="flex-shrink-0">
+            <ProfileHeader />
           </div>
-          
-          {/* Right Column */}
-          <div className="flex flex-col gap-4">
-            {/* Discord Section */}
-            <div className="flex-shrink-0">
+          <div className="flex-1 flex flex-col gap-3 min-h-0">
+            <div className="flex-1">
               <DiscordSection />
             </div>
-            
-            {/* Music Player */}
             <div className="flex-shrink-0">
+              <MusicPlayer autoPlay={true} />
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden md:flex flex-col gap-4 h-full">
+          <div className="flex-shrink-0">
+            <ProfileHeader />
+          </div>
+          <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-4 min-h-0">
+            <div className="flex flex-col">
+              <DiscordSection />
+            </div>
+            <div className="flex flex-col">
               <MusicPlayer autoPlay={true} />
             </div>
           </div>
