@@ -16,7 +16,7 @@ const DiscordSection = () => {
       <div className="bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-2xl p-6 border border-white/10">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h3 className="text-xl font-bold text-white mb-2">@tsoxas</h3>
+            <h3 className="text-xl font-bold text-white mb-2">@ampfed</h3>
             <p className="text-white/70">Active Discord Developer</p>
           </div>
           <div className="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">

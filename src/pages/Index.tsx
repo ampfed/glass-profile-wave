@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
 import ProfileHeader from '../components/ProfileHeader';
-import SocialLinks from '../components/SocialLinks';
 import DiscordSection from '../components/DiscordSection';
 import MusicPlayer from '../components/MusicPlayer';
 import EntryScreen from '../components/EntryScreen';
@@ -45,11 +44,6 @@ const Index = () => {
             {/* Profile Header */}
             <div className="flex-shrink-0">
               <ProfileHeader />
-            </div>
-            
-            {/* Social Links */}
-            <div className="flex-shrink-0">
-              <SocialLinks />
             </div>
           </div>
           
