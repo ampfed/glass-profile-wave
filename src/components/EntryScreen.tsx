@@ -10,14 +10,43 @@ const EntryScreen = ({ onEnter }: EntryScreenProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="fixed inset-0 bg-black flex items-center justify-center z-50 cursor-pointer group"
+    <div className="fixed inset-0 bg-black flex items-center justify-center z-50 cursor-pointer group overflow-hidden"
          onClick={onEnter}>
-      {/* Animated background particles */}
+      {/* Animated moving stars background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-purple-500/30 rounded-full animate-pulse"></div>
-        <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-blue-500/40 rounded-full animate-pulse delay-500"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-indigo-400/30 rounded-full animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 right-1/3 w-1 h-1 bg-purple-400/40 rounded-full animate-pulse delay-700"></div>
+        {/* Large moving stars */}
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full animate-pulse opacity-80"></div>
+        <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-white rounded-full animate-pulse delay-500 opacity-60"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-white rounded-full animate-pulse delay-1000 opacity-70"></div>
+        <div className="absolute top-1/2 right-1/3 w-1 h-1 bg-white rounded-full animate-pulse delay-700 opacity-50"></div>
+        
+        {/* Additional animated stars */}
+        <div className="absolute top-10 left-20 w-1 h-1 bg-purple-300 rounded-full animate-ping delay-200"></div>
+        <div className="absolute bottom-20 right-40 w-1.5 h-1.5 bg-blue-300 rounded-full animate-ping delay-800"></div>
+        <div className="absolute top-40 right-20 w-1 h-1 bg-pink-300 rounded-full animate-ping delay-1200"></div>
+        <div className="absolute bottom-40 left-40 w-2 h-2 bg-indigo-300 rounded-full animate-ping delay-600"></div>
+        
+        {/* Moving stars with custom animation */}
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute w-1 h-1 bg-white rounded-full animate-bounce" style={{
+            top: '20%',
+            left: '10%',
+            animationDelay: '0s',
+            animationDuration: '3s'
+          }}></div>
+          <div className="absolute w-1 h-1 bg-white rounded-full animate-bounce" style={{
+            top: '60%',
+            left: '80%',
+            animationDelay: '1s',
+            animationDuration: '4s'
+          }}></div>
+          <div className="absolute w-1 h-1 bg-white rounded-full animate-bounce" style={{
+            top: '80%',
+            left: '30%',
+            animationDelay: '2s',
+            animationDuration: '5s'
+          }}></div>
+        </div>
       </div>
       
       {/* Main content */}
